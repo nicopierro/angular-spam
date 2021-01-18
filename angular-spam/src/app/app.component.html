@@ -1,0 +1,21 @@
+<div class="container">
+  <form class="jumbotron">
+      <h3 class="display-4">Angular spam:</h3>
+      <div class="form-group">
+        <label for="spamText">Cose inutili:</label>
+        <input name="spamText" #newText class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="num">Spam:</label>
+        <input name="num" #newNum class="form-control">
+      </div>
+    <button (click)="addArticle(newText, newNum)" class="btn btn-primary">
+      Submit spam
+    </button>
+  </form>
+  <ul>
+    <li *ngFor="let article of articles" >
+      <app-spam [article]='article'></app-spam>
+    </li>
+    </ul>
+</div>
